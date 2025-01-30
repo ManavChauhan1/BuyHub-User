@@ -12,27 +12,27 @@ import MobileFilters from "./components/mobile-filters";
 
 export const revalidate = 0;
 
-interface CategoryPageProps{
-    params: {
-        categoryId: string;
-    },
-    searchParams: {
-        colorId: string;
-        sizeId: string;
-    }
-}
+// interface CategoryPageProps{
+//     params: {
+//         categoryId: string;
+//     },
+//     searchParams: {
+//         colorId: string;
+//         sizeId: string;
+//     }
+// }
 
-const CategoryPage: React.FC<CategoryPageProps> = async ({
-    params,
-    searchParams
-}) => {
+type Params = Promise<{ categoryId: string }>
+type SearchParams = Promise<{ colorId: string, sizeId: string }>
+
+const CategoryPage = async ({ params, searchParams }: { params: Params, searchParams: SearchParams }) => {
 
     const awaitedParams = await params;
     const awaitedSearchParams = await searchParams;
 
     const products = await getProducts({
         categoryId: awaitedParams.categoryId,
-        colorid: awaitedSearchParams.colorId,
+        colorId: awaitedSearchParams.colorId,
         sizeId: awaitedSearchParams.sizeId
     });
 
