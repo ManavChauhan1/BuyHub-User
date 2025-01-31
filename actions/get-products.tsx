@@ -2,7 +2,7 @@ import qs from "query-string";
 
 import { Product } from "@/types";
 
-const URL = `https://buy-hub-admin-ok1qxmcah-manav-chauhans-projects.vercel.app/api/42bcb651-d581-402d-bdb2-ce247a1f949b/products`; 
+const URL = `${process.env.NEXT_PUBLIC_API_URL}/products`; 
 
 interface Query {
     categoryId?: string;
