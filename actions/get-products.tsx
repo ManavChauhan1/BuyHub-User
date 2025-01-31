@@ -2,11 +2,11 @@ import qs from "query-string";
 
 import { Product } from "@/types";
 
-const URL = `${process.env.NEXT_PUBLIC_API_URL}/products`; 
+const URL = `https://buy-hub-admin-ok1qxmcah-manav-chauhans-projects.vercel.app/api/42bcb651-d581-402d-bdb2-ce247a1f949b/products`; 
 
 interface Query {
     categoryId?: string;
-    colorid?: string;
+    colorId?: string;
     sizeId?: string;
     isFeatured?: boolean;
 }
@@ -16,7 +16,7 @@ const getProducts = async (query: Query): Promise<Product[]> => {
     const url = qs.stringifyUrl({
         url : URL,
         query: {
-            colorId: query.colorid,
+            colorId: query.colorId,
             sizeId: query.sizeId,
             categoryId: query.categoryId,
             isFeatured: query.isFeatured,

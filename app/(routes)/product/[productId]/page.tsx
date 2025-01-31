@@ -6,15 +6,15 @@ import ProductList from "@/components/product-list";
 import Container from "@/components/ui/container";
 
 
-interface ProductPageProps {
-    params: {
-        productId: string;
-    }
-}
+// interface ProductPageProps {
+//     params: {
+//         productId: string;
+//     }
+// }
 
-const ProductPage: React.FC<ProductPageProps> = async ({
-    params
-}) => {
+type Params = Promise<{ productId: string }>
+
+const ProductPage = async ({ params }: { params: Params }) => {
 
     const awaitedParams = await params;
 
