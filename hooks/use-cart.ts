@@ -35,5 +35,4 @@ const useCart = create(
         storage: createJSONStorage(() => localStorage)
     })
 )
-
 export default useCart;
