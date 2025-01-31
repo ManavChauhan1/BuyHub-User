@@ -11,7 +11,6 @@ interface InfoProps{
     data: Product;
 }
 
-
 const Info:React.FC<InfoProps> = ({
     data
 }) => {
